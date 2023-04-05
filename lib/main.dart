@@ -1,107 +1,65 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'Opendag app',
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
+        scaffoldBackgroundColor: Colors.black,
       ),
-      home: Center(
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text('Opendag app'),
-          ),
-          body: Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: Column(
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          // Action to perform when the first card is clicked
-                        },
-                        child: Card(
-                          elevation: 2,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            side: BorderSide(
-                              color: Color.fromARGB(255, 0, 0, 0),
-                              width: 5,
-                            ),
-                          ),
-                          child: Container(
-                            height: 300,
-                            width: 400,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              image: DecorationImage(
-                                image: NetworkImage(
-                                  'https://via.placeholder.com/150x150',
-                                ),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 16),
-                      Text(
-                        'Web development',
-                        style: TextStyle(fontSize: 16),
-                      ),
-                    ],
-                  ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Opendag app'),
+        ),
+        body: Center(
+          child: Column(
+            children: [
+              SizedBox(height: 70),
+              Text(
+                'Welkom',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 30,
                 ),
-                SizedBox(width: 16),
-                Expanded(
-                  child: Column(
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          // Action to perform when the second card is clicked
-                        },
-                        child: Card(
-                          elevation: 2,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            side: BorderSide(
-                              color: Color.fromARGB(255, 0, 0, 0),
-                              width: 5,
-                            ),
-                          ),
-                          child: Container(
-                            height: 300,
-                            width: 400,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              image: DecorationImage(
-                                image: NetworkImage(
-                                  'https://unity.com/sites/default/files/styles/16_9_s_scale_width/public/2020-08/Game-developer-working-on-Unity-Editor-scene.jpg?itok=gpG2QbZI',
-                                ),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 16),
-                      Text(
-                        'Game development',
-                        style: TextStyle(fontSize: 16),
-                      ),
-                    ],
-                  ),
+              ),
+              SizedBox(height: 15),
+              Text(
+                'Test test test',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
                 ),
-              ],
-            ),
+              ),
+              SizedBox(height: 50),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(
+                    child: Image.asset(
+                      'images/',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  SizedBox(
+                    child: Image.asset(
+                      'images/',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),
