@@ -5,7 +5,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +35,7 @@ class MyApp extends StatelessWidget {
               const SizedBox(height: 15),
               Container(
                 child: const Text(
-                  '''Deze opleiding bied 2 richtingen aan, maak je keuze hieronder
-en laat je informeren :)''',
+                  '''Deze opleiding biedt 2 richtingen aan, maak je keuze hieronder en laat je informeren :)''',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     color: Colors.white,
@@ -47,16 +46,15 @@ en laat je informeren :)''',
               const SizedBox(height: 50),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                // ignore: prefer_const_literals_to_create_immutables
-                children: [
-                  const Text(
+                children: const [
+                  Text(
                     'Software development',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
                     ),
                   ),
-                  const Text(
+                  Text(
                     'Game development',
                     style: TextStyle(
                       color: Colors.white,
@@ -80,23 +78,41 @@ en laat je informeren :)''',
                         fit: BoxFit.cover,
                       ),
                       color: Colors.grey,
-                      // ignore: prefer_const_literals_to_create_immutables
-                      boxShadow: [
-                        const BoxShadow(
-                            color: Colors.white,
-                            spreadRadius: 1,
-                            blurRadius: 15)
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.white,
+                          spreadRadius: 1,
+                          blurRadius: 15,
+                        ),
                       ],
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: GestureDetector(
+                    child: InkWell(
                       onTap: () {},
                     ),
                   ),
                   Container(
-                    child: Image.asset(
-                      'images/',
-                      fit: BoxFit.cover,
+                    width: 300,
+                    height: 350,
+                    decoration: BoxDecoration(
+                      image: const DecorationImage(
+                        image: NetworkImage(
+                          'https://unity.com/sites/default/files/styles/16_9_s_scale_width/public/2020-08/Game-developer-working-on-Unity-Editor-scene.jpg?itok=gpG2QbZI',
+                        ),
+                        fit: BoxFit.cover,
+                      ),
+                      color: Colors.grey,
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.white,
+                          spreadRadius: 1,
+                          blurRadius: 15,
+                        ),
+                      ],
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: InkWell(
+                      onTap: () {},
                     ),
                   ),
                 ],
