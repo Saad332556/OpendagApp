@@ -48,13 +48,6 @@ class MyApp extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: const [
                   Text(
-                    'Software development',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
-                    ),
-                  ),
-                  Text(
                     'Game development',
                     style: TextStyle(
                       color: Colors.white,
@@ -67,53 +60,76 @@ class MyApp extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Container(
-                    width: 300,
-                    height: 350,
-                    decoration: BoxDecoration(
-                      image: const DecorationImage(
-                        image: NetworkImage(
-                          'https://www.simplilearn.com/ice9/free_resources_article_thumb/how-to-become-a-php-developer-3.jpg',
+                  Stack(
+                    children: [
+                      Container(
+                        width: 300,
+                        height: 350,
+                        decoration: BoxDecoration(
+                          image: const DecorationImage(
+                            image: NetworkImage(
+                              'https://www.simplilearn.com/ice9/free_resources_article_thumb/how-to-become-a-php-developer-3.jpg',
+                            ),
+                            fit: BoxFit.cover,
+                          ),
+                          color: Colors.grey,
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.white,
+                              spreadRadius: 1,
+                              blurRadius: 15,
+                            ),
+                          ],
+                          borderRadius: BorderRadius.circular(10),
                         ),
-                        fit: BoxFit.cover,
+                        child: InkWell(
+                          onTap: () {},
+                        ),
                       ),
-                      color: Colors.grey,
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.white,
-                          spreadRadius: 1,
-                          blurRadius: 15,
+                      Positioned(
+                        left: 40,
+                        top: 10,
+                        child: Container(
+                          padding: const EdgeInsets.all(8),
+                          color: Colors.black.withOpacity(0.7),
+                          child: const Text(
+                            'Software Development',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                          ),
                         ),
-                      ],
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: InkWell(
-                      onTap: () {},
-                    ),
+                      ),
+                    ],
                   ),
-                  Container(
-                    width: 300,
-                    height: 350,
-                    decoration: BoxDecoration(
-                      image: const DecorationImage(
-                        image: NetworkImage(
-                          'https://unity.com/sites/default/files/styles/16_9_s_scale_width/public/2020-08/Game-developer-working-on-Unity-Editor-scene.jpg?itok=gpG2QbZI',
+                  Stack(
+                    children: [
+                      Container(
+                        width: 300,
+                        height: 350,
+                        decoration: BoxDecoration(
+                          image: const DecorationImage(
+                            image: NetworkImage(
+                              'https://unity.com/sites/default/files/styles/16_9_s_scale_width/public/2020-08/Game-developer-working-on-Unity-Editor-scene.jpg?itok=gpG2QbZI',
+                            ),
+                            fit: BoxFit.cover,
+                          ),
+                          color: Colors.grey,
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.white,
+                              spreadRadius: 1,
+                              blurRadius: 15,
+                            ),
+                          ],
+                          borderRadius: BorderRadius.circular(10),
                         ),
-                        fit: BoxFit.cover,
+                        child: InkWell(
+                          onTap: () {},
+                        ),
                       ),
-                      color: Colors.grey,
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.white,
-                          spreadRadius: 1,
-                          blurRadius: 15,
-                        ),
-                      ],
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: InkWell(
-                      onTap: () {},
-                    ),
+                    ],
                   ),
                 ],
               ),
