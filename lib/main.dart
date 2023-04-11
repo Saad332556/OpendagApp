@@ -129,7 +129,23 @@ class MyApp extends StatelessWidget {
                           onTap: () {},
                         ),
                       ),
+                       Positioned(
+                        left: 50,
+                        top: 10,
+                        child: Container(
+                          padding: const EdgeInsets.all(8),
+                          color: Colors.black.withOpacity(0.7),
+                          child: const Text(
+                            'Game Development',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
+                    
                   ),
                 ],
               ),
